@@ -2,16 +2,16 @@ import React from "react";
 // import Image //from "next/image";
  //from "next/image";
 import linkIconBlack from "@/assets/icons/link-icon-black.svg";
-import ConnectWalletBtn from "../ConnectWalletBtn";
-import TotalPortfolioProfitLoss from "./TotalPortfolioProfitLoss";
-import LineChart from "../charts/linechart/LineChartComponent";
-import PieChartComponent from "../charts/piechart/PieChartComponent";
-import VerticalBarChartComponent from "../charts/barChart/BarChartComponent";
+import ConnectWalletBtn from "../../ConnectWalletBtn";
+import TotalPortfolioProfitLoss from "../TotalPortfolioProfitLoss";
+import LineChart from "../../charts/linechart/LineChartComponent";
+import PieChartComponent from "../../charts/piechart/PieChartComponent";
+import VerticalBarChartComponent from "../../charts/barChart/BarChartComponent";
 
 export default function Analytics() {
   return (
     <div>
-      <div className="flex justify-between items-center mb-5 mx-3">
+      <div className="flex justify-between items-center p-2">
         <div>
           <p className="font-bold">Dashboard</p>
           <div className="flex gap-1 items-center text-xs">
@@ -25,7 +25,7 @@ export default function Analytics() {
       </div>
       <LineChart />
       <TotalPortfolioProfitLoss />
-      <div className="flex gap-4">
+      <div className="flex gap-4 px-2">
         <PieChartComponent />
         <VerticalBarChartComponent />
       </div>

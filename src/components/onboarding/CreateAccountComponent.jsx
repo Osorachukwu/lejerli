@@ -1,9 +1,10 @@
 // import Image //from "next/image";
- //from "next/image";
-import React from "react";
+//from "next/image";
+import React, { useState } from "react";
 import googleLogo from "@/assets/Google_Icons.webp";
+import { Link } from "react-router-dom";
 
-export default function CreateAccount() {
+export default function CreateAccountComponent({ handleSwitch }) {
   return (
     <div>
       <div className="space-y-2 mb-8">
@@ -49,30 +50,19 @@ export default function CreateAccount() {
               required
             />
           </div>
-          <label
-            htmlFor="remember"
-            className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+          <Link
+            to="#"
+            className="ms-2 text-sm font-medium text-primaryColor  hover:underline dark:text-secondaryColor"
           >
-            I agree with Lejerli's
-            <a
-              href="#"
-              className="text-blue-600 hover:underline dark:text-blue-500"
-            >
-              Terms of Service
-            </a>
-            and
-            <a
-              href="#"
-              className="text-blue-600 hover:underline dark:text-blue-500"
-            >
-              Privacy Policy
-            </a>
-            .
-          </label>
+            <label htmlFor="remember" className="">
+              I agree with Lejerli's Terms of Service and Privacy Policy.
+            </label>
+          </Link>
         </div>
         <button
           type="button"
-          className="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          className="w-full text-white bg-secondaryColor hover:bg-white hover:text-secondaryColor hover:border hover:border-secondaryColor focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          onClick={handleSwitch}
         >
           Continue
         </button>
@@ -82,7 +72,7 @@ export default function CreateAccount() {
           <div className="border h-[1px] w-full"></div>
         </div>
         <a href="#" type="button">
-          <div className="flex justify-center items-center border border-blue-700 text-blue-700 rounded-lg font-medium text-sm dark:bg-blue-600 dark:hover:bg-blue-700 hover:text-white focus:outline-none dark:focus:ring-blue-800 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300">
+          <div className="flex justify-center items-center border border-secondaryColor text-secondaryColor rounded-lg font-medium text-sm dark:bg-blue-600 dark:hover:bg-blue-700 hover:text-white focus:outline-none dark:focus:ring-blue-800 hover:bg-secondaryColor focus:ring-4 focus:ring-blue-300">
             <img src={googleLogo} alt="" className="h-10 w-10" />
             Connect with Google
           </div>
@@ -90,7 +80,10 @@ export default function CreateAccount() {
       </form>
       <p className="text-black text-center mt-4">
         Already have an account?{" "}
-        <a href="" className="text-blue-600 hover:underline dark:text-blue-500">
+        <a
+          href=""
+          className="text-secondaryColor hover:underline dark:text-blue-500"
+        >
           Login
         </a>
       </p>

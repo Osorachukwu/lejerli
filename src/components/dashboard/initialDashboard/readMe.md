@@ -1,0 +1,1 @@
+This folder contains components realated to the dashboard when the user is yet to connect wallet.

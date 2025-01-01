@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import {
   PieChart,
@@ -34,10 +33,11 @@ const PieChartComponent = () => {
   ];
 
   return (
-    <div className="w-full border rounded-lg">
+    <>
+    <div className="w-full border rounded-lg" style={{height: "400px"}}>
       <Portfolio />
-      <div className="w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      {/* <div className="w-full"> */}
+        <ResponsiveContainer width="100%" height="80%">
           <PieChart>
             <Pie
               data={pieData}
@@ -61,8 +61,9 @@ const PieChartComponent = () => {
             <Legend />
           </PieChart>
         </ResponsiveContainer>
-      </div>
+      {/* </div> */}
     </div>
+    </>
   );
 };
 

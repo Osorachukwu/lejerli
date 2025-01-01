@@ -7,7 +7,7 @@ import totalLoss from "@/assets/icons/total-loss.svg";
 
 export default function TotalPortfolioProfitLoss() {
   return (
-    <div className="grid grid-cols-3 gap-3 mb-5">
+    <div className="grid grid-cols-3 gap-3 p-2">
       <div className="border flex items-center gap-2 p-4 rounded-lg">
         <img src={portfolioBalance} alt="Portfolio Balance" />
         <div>

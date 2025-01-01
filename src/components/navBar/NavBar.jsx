@@ -3,6 +3,7 @@ import lejerliLogo from "../../assets/company-logo.svg";
 import NavList from "./NavList";
 import ConnectWalletBtn from "../ConnectWalletBtn";
 import { Menu, X } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function NavBar() {
   const [toogle, setToggle] = useState(false);
@@ -15,7 +16,9 @@ export default function NavBar() {
       <div className="hidden md:block">
         <div className="flex justify-center py-4">
           <nav className="flex gap-8 items-center border rounded-lg p-2 shadow-xl">
-            <img src={lejerliLogo} alt="Company logo" />
+            <Link to="/">
+              <img src={lejerliLogo} alt="Company logo" />
+            </Link>
             <NavList styleProp="space-x-8" />
             <ConnectWalletBtn />
           </nav>

@@ -78,10 +78,10 @@ export default function LineChartComponent() {
   ];
 
   return (
-    <div className="border-8 rounded-lg">
+    <div className="border-8 rounded-lg" style={{height: "400px"}}>
       <Transactions />
       <div className="w-full h-80 pr-8">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width="100%" height="80%">
           <LineChart
             width={500}
             height={400}

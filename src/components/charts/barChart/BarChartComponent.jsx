@@ -22,10 +22,10 @@ const VerticalBarChartComponent = () => {
   ];
 
   return (
-    <div className="w-full border rounded-lg">
+    <div className="w-full border rounded-lg" style={{height: "400px"}}>
       <ProfitAndLoss />
-      <div className="w-full">
-        <ResponsiveContainer width="100%" height="100%">
+      {/* <div className="w-full"> */}
+        <ResponsiveContainer width="100%" height="80%">
           <ComposedChart
             layout="vertical"
             data={salesData}
@@ -45,7 +45,7 @@ const VerticalBarChartComponent = () => {
             <Bar dataKey="profit" fill="#8b5cf6" barSize={20} />
           </ComposedChart>
         </ResponsiveContainer>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

@@ -7,19 +7,22 @@ import {
   Twitter,
   Youtube,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#201537] dark:bg-gray-900">
+    <footer className="bg-primaryColor dark:bg-gray-900">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
           <div>
-            <img src={companyLogoWhite} alt="" />
+            <Link to="/">
+              <img src={companyLogoWhite} alt="" />
+            </Link>
             <div className="mt-10">
               {/* Apple store */}
               <button
                 type="button"
-                className="flex items-center justify-center w-44 text-black bg-white h-14 rounded-xl"
+                className="flex items-center justify-center w-44 text-black bg-white h-14 rounded-lg"
               >
                 <div className="mr-3">
                   <svg viewBox="0 0 384 512" width="30">
@@ -76,26 +79,26 @@ export default function Footer() {
             <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
               Product
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-white dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className=" hover:underline">
-                  About
-                </a>
+                <Link to="#" className=" hover:underline">
+                  How it works 
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Careers
-                </a>
+                <Link to="#" className="hover:underline">
+                  Reviews
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Brand Center
-                </a>
+                <Link to="#" className="hover:underline">
+                  Pricing
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Blog
-                </a>
+                <Link to="#" className="hover:underline">
+                 Tax Professional Suite
+                </Link>
               </li>
             </ul>
           </div>
@@ -103,26 +106,26 @@ export default function Footer() {
             <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
               Tools
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-white dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Discord Server
-                </a>
+                <Link to="#" className="hover:underline">
+                 Crypto Profit & Loss Calculator
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Twitter
-                </a>
+                <Link to="#" className="hover:underline">
+                  Crypto Tax Calculator
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Facebook
-                </a>
+                <Link to="#" className="hover:underline">
+                  Crypto Portfolio Tracker
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Contact Us
-                </a>
+                <Link to="#" className="hover:underline">
+                  Crypto Converter
+                </Link>
               </li>
             </ul>
           </div>
@@ -130,21 +133,31 @@ export default function Footer() {
             <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
               Company
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-white dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Privacy Policy
-                </a>
+                <Link to="#" className="hover:underline">
+                  About Us
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Licensing
-                </a>
+                <Link to="#" className="hover:underline">
+                  Partner With Us
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Terms &amp; Conditions
-                </a>
+                <Link to="#" className="hover:underline">
+                  Careers
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link to="#" className="hover:underline">
+                  Contact Us
+                </Link>
+              </li>
+              <li className="mb-4">
+                <Link to="#" className="hover:underline">
+                  Blog
+                </Link>
               </li>
             </ul>
           </div>
@@ -152,34 +165,29 @@ export default function Footer() {
             <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
               Support
             </h2>
-            <ul className="text-gray-500 dark:text-gray-400 font-medium">
+            <ul className="text-white dark:text-gray-400">
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  iOS
-                </a>
+                <Link to="#" className="hover:underline">
+                  FAQs
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Android
-                </a>
+                <Link to="#" className="hover:underline">
+                  Help Center
+                </Link>
               </li>
               <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  Windows
-                </a>
-              </li>
-              <li className="mb-4">
-                <a href="#" className="hover:underline">
-                  MacOS
-                </a>
+                <Link to="#" className="hover:underline">
+                  Security
+                </Link>
               </li>
             </ul>
           </div>
         </div>
         {/*  */}
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
-        <div className="sm:flex sm:items-center sm:justify-between text-white">
-          <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
+        <div className="sm:flex sm:items-center sm:justify-between text-white pl-2">
+          <span className="text-sm text-white sm:text-center dark:text-gray-400">
             ©
             <a href="https://flowbite.com/" className="hover:underline">
               Lejerli
@@ -191,34 +199,35 @@ export default function Footer() {
             <a>Privacy Policy</a>
             <a>Cookies</a>
           </div>
-          <div className="flex mt-4 sm:justify-center sm:mt-0">
+          <div className="flex pb-4 mt-4 sm:justify-center sm:mt-0">
+            
             <a
-              href="https://flowbite.com/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
-            >
-              <Instagram />
-              <span className="sr-only">Instagram</span>
-            </a>
-            <a
-              href="https://flowbite.com/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+              href="#"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white bg-white rounded-full p-1"
             >
               <Facebook />
-              <span className="sr-only">Facebook page</span>
+              <span className="sr-only">Facebook page page</span>
             </a>
             <a
-              href="https://flowbite.com/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              href="#"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 bg-white rounded-full p-1"
             >
               <Twitter />
-              <span className="sr-only">Twitter</span>
+              <span className="sr-only">Twitter page</span>
             </a>
             <a
-              href="https://flowbite.com/"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+              href="#"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 bg-white rounded-full p-1"
             >
               <Youtube />
-              <span className="sr-only">GitHub account</span>
+              <span className="sr-only">Youtube page</span>
+            </a>
+            <a
+              href="#"
+              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 bg-white rounded-full p-1"
+            >
+              <Instagram />
+              <span className="sr-only">Instagram page</span>
             </a>
           </div>
         </div>

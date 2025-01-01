@@ -6,7 +6,12 @@ module.exports = {
     "./node_modules/@shadcn/ui/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        primaryColor: "#201537",
+        secondaryColor: "#8041FF"
+      },
+    },
   },
   plugins: [require("tailwindcss-animate")],
 };

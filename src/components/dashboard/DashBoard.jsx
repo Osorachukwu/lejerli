@@ -1,14 +1,18 @@
 "use client";
 import React, { useState } from "react";
-// import Image //from "next/image";
- //from "next/image";
 import lejerliLogo from "@/assets/company-logo.svg";
 import trustWallet from "@/assets/icons/trust-wallet.svg";
 import RecentTransactions from "./RecentTransactions";
 import SwitchTheme from "../SwitchTheme";
 import TotalPortfolioProfitLoss from "./TotalPortfolioProfitLoss";
 import Dash from "./Dash";
-import Analytics from "./Analytics";
+import Accounts from "./dashboardSideBar/Accounts";
+import Reports from "./dashboardSideBar/Reports";
+import Settings from "./dashboardSideBar/Settings";
+import HelpAndSupport from "./dashboardSideBar/HelpAndSupport";
+import UserProfile from "./UserProfile";
+import UpgradePlan from "./UpgradePlan";
+import { Link } from "react-router-dom";
 
 export default function DashBoard() {
   // State to track the active view
@@ -19,12 +23,14 @@ export default function DashBoard() {
     setActiveView(btnItem.btnTitle); // Set active view based on button title
   };
   return (
-    <section className="border rounded-lg shadow-xl">
+    <section className="border rounded-lg shadow-xl bg-white h-full hidden md:block">
       <div className="flex">
         {/* First col💥 */}
-        <div className="w-1/5 border-r">
+        <div className="w-1/5 border-r h-screen">
           <div className="flex items-center gap-5 px-8 h-16">
-            <img src={lejerliLogo} alt="Legeril Logo" />
+            <Link to="/">
+              <img src={lejerliLogo} alt="Legeril Logo" />
+            </Link>
             <p>Icon</p>
           </div>
           {/* Dashbord main Buttons */}
@@ -54,6 +60,8 @@ export default function DashBoard() {
             </div>
             {/* Toggle */}
             <SwitchTheme />
+            <UpgradePlan />
+            <UserProfile />
           </div>
         </div>
         {/* Second col 💥 */}
