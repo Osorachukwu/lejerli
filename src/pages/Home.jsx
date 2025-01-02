@@ -5,7 +5,8 @@ import dataEncryptImage from "../assets/data-encrypt.svg";
 import Hero from "../components/Home/Hero";
 import NavBar from "../components/navBar/NavBar";
 import Footer from "../components/Home/Footer";
-import DashBoard from "../components/dashboard/DashBoard";
+// import DashBoard from "../components/dashboard/DashBoard";
+import dashBoardPhoto from '../assets/dashboard_photo.png'
 
 export default function Home() {
   return (
@@ -13,11 +14,14 @@ export default function Home() {
       <NavBar />
       <Hero />
 
-      <div className="px-44 my-28 ">
+      {/* <div className="px-44 my-28 ">
         <DashBoard />
+      </div> */}
+      <div className="px-4">
+        <img src={dashBoardPhoto} alt="Dashboard photo" className="md:h-[300px] lg:h-[600px] mx-auto border rounded-xl shadow-lg"/>
       </div>
 
-      <div className="flex justify-center py-12">
+      <div className="flex justify-center py-12 px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div>
             <img src={syncImage} alt="Synchronize transactions" />

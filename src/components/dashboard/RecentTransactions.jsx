@@ -65,7 +65,7 @@ export default function RecentTransactions() {
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
               <DropdownMenu.Item>
 Per Day</DropdownMenu.Item>
               <DropdownMenu.Item>
@@ -85,7 +85,7 @@ Last Year</DropdownMenu.Item>
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
               <DropdownMenu.Item>
 Incoming</DropdownMenu.Item>
               <DropdownMenu.Item>
@@ -95,16 +95,16 @@ Outgoing</DropdownMenu.Item>
         </div>
       </div>
       <div className="border rounded-lg shadow-xl">
-        <div className="bg-slate-200 px-5 py-2 font-bold grid grid-cols-4">
+        <div className="bg-slate-200 px-5 py-3 font-bold grid grid-cols-4">
           <p>Wallet</p>
           <p>Service</p>
           <p>Token</p>
           <p>Date & Time</p>
         </div>
-        <div>
+        <div className="divide-y-2">
           {recentTransationsData.map((transaction, i) => (
             <div key={i} className="grid grid-cols-4">
-              <div className="px-5 py-2 flex items-center gap-1">
+              <div className="px-5 py-3 flex items-center gap-1">
                 <img src={transaction.walletLogo} alt="" />
                 <p>{transaction.walletTitle}</p>
               </div>

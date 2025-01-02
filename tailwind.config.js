@@ -11,6 +11,9 @@ module.exports = {
         primaryColor: "#201537",
         secondaryColor: "#8041FF"
       },
+      boxShadow: {
+        customBoxShadow: '0px 2px 4px rgba(25,27,49,0.25)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

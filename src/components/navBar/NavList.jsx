@@ -9,11 +9,11 @@ export default function NavList({ styleProp }) {
       <DropdownMenu.Root>
         <DropdownMenu.Trigger className="focus:outline-none">
           <div className="flex justify-between items-center gap-2 px-1 py-2.5 font-medium rounded-lg">
-            All Time
+            Product
             <ChevronDown size={16} />
           </div>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="bg-white shadow-lg px-3 py-2 rounded-lg space-y-2">
+        <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
           <DropdownMenu.Item className="focus:outline-none">Profile</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Billing</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Team</DropdownMenu.Item>
@@ -22,16 +22,16 @@ export default function NavList({ styleProp }) {
       </DropdownMenu.Root>
       
 
-      <a>Intergrations</a>
-      <a>Price</a>
+      <a className="font-medium">Intergrations</a>
+      <a className="font-medium">Pricing</a>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger className="focus:outline-none">
           <div className="flex justify-between items-center gap-2 px-1 py-2.5 font-medium rounded-lg">
-            All Time
+            Resources
             <ChevronDown size={16} />
           </div>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="bg-white shadow-lg px-3 py-2 rounded-lg space-y-2">
+        <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
           <DropdownMenu.Item className="focus:outline-none">Profile</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Billing</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Team</DropdownMenu.Item>

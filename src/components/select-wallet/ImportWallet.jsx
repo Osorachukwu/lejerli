@@ -4,6 +4,7 @@ import React from "react";
 import { ArrowDownToLine, ChevronDown, Info, X } from "lucide-react";
 import bitcoinLogo from "@/assets/assets-logo/bitcoin-logo.svg";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import { Link } from "react-router-dom";
 
 export default function ImportWallet() {
   return (
@@ -77,8 +78,7 @@ export default function ImportWallet() {
                 </div>
               </DropdownMenu.Trigger>
               <DropdownMenu.Content
-                className="w-[100%] bg-green-400"
-                style={{ width: "100%" }}
+                className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2"
               >
                 <DropdownMenu.Item>
                   Profile Profile Profile Profile Profile
@@ -94,19 +94,21 @@ export default function ImportWallet() {
           </div>
           {/* BTN's */}
           <div className="flex justify-end items-center">
-            <button
-              type="button"
-              className="px-5 py-2.5 inline-flex items-center text-white bg-[#8041FF] hover:bg-gray-100 hover:text-[#8041FF] border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2"
-            >
-              <ArrowDownToLine />
-              Import CSV File
-            </button>
-            <button
-              type="button"
-              className="px-5 py-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 me-2 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
-            >
-              Cancle
-            </button>
+            <Link to="/dashboard">
+              <button
+                type="button"
+                className="px-5 py-2.5 inline-flex items-center text-white bg-[#8041FF] hover:bg-gray-100 hover:text-[#8041FF] border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2"
+              >
+                <ArrowDownToLine />
+                Import CSV File
+              </button>
+              <button
+                type="button"
+                className="px-5 py-3 text-sm font-medium text-gray-900 focus:outline-none bg-white rounded-lg border border-gray-200 me-2 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+              >
+                Cancle
+              </button>
+            </Link>
           </div>
         </div>
       </div>

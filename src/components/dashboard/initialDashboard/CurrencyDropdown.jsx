@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import axios from "axios";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
-// import { ChevronDown } from "react-icons/fi";
 import { ChevronDown } from "lucide-react";
+// import { ChevronDown } from "react-icons/fi";
 
 const CurrencyDropdown = () => {
   const [currencies, setCurrencies] = useState([]);
@@ -16,11 +17,8 @@ const CurrencyDropdown = () => {
       setIsLoading(true);
       setError(null);
       try {
-        const response = await fetch("https://restcountries.com/v3.1/all");
-        if (!response.ok) {
-          throw new Error(`Error: ${response.status} ${response.statusText}`);
-        }
-        const data = await response.json();
+        const response = await axios.get("https://restcountries.com/v3.1/all");
+        const data = response.data;
 
         // Extract unique currencies
         const currencySet = new Set();
@@ -43,7 +41,7 @@ const CurrencyDropdown = () => {
         setCurrencies(formattedCurrencies);
         setFilteredCurrencies(formattedCurrencies);
       } catch (err) {
-        setError(err.message || "Something went wrong.");
+        setError(err.response?.data?.message || err.message || "Something went wrong.");
       } finally {
         setIsLoading(false);
       }
@@ -72,7 +70,7 @@ const CurrencyDropdown = () => {
   }
 
   if (error) {
-    return <p className="text-red-500">Error: {error}</p>;
+    // return <p className="text-red-500">Error: {error}</p>;
   }
 
   return (
@@ -95,24 +93,7 @@ const CurrencyDropdown = () => {
           </div>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content className="bg-white shadow-lg px-3 py-2 rounded-lg space-y-2 w-60 max-h-64 overflow-y-auto">
-          <div className="px-2 relative">
-            <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
-              <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 20 20"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"
-                />
-              </svg>
-            </div>
+          <div className="px-2">
             <input
               type="search"
               placeholder="Search"

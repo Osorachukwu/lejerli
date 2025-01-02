@@ -73,7 +73,7 @@ export default function Dash() {
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
               <DropdownMenu.Item>Profile</DropdownMenu.Item>
               <DropdownMenu.Item>Billing</DropdownMenu.Item>
               <DropdownMenu.Item>Team</DropdownMenu.Item>
@@ -90,7 +90,7 @@ export default function Dash() {
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content>
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
               <DropdownMenu.Item>Profile</DropdownMenu.Item>
               <DropdownMenu.Item>Billing</DropdownMenu.Item>
               <DropdownMenu.Item>Team</DropdownMenu.Item>

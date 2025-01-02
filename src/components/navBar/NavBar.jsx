@@ -15,7 +15,7 @@ export default function NavBar() {
       {/* Desktop */}
       <div className="hidden md:block">
         <div className="flex justify-center py-4">
-          <nav className="flex gap-8 items-center border rounded-lg p-2 shadow-xl">
+          <nav className="shadow-customBoxShadow flex gap-8 items-center rounded-lg p-2">
             <Link to="/">
               <img src={lejerliLogo} alt="Company logo" />
             </Link>
@@ -37,7 +37,9 @@ export default function NavBar() {
             {toogle && (
               <div className="h-screen space-y-8 px-5 mt-5">
                 <NavList styleProp="flex flex-col gap-4 w-full text-lg" />
-                <ConnectWalletBtn />
+                <Link to="">
+                  <ConnectWalletBtn />
+                </Link>
               </div>
             )}
           </div>
