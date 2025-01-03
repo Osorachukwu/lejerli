@@ -14,7 +14,7 @@ export default function UpgradePlan() {
       </div>
       <button
         type="button"
-        className="w-full flex justify-center py-2 items-center text-secondaryColor hover:bg-gray-100 hover:text-secondaryColor border border-secondaryColor focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2"
+        className="w-full flex justify-center py-2 items-center text-secondaryColor hover:bg-gray-100 hover:text-secondaryColor border border-secondaryColor focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center me-2"
       >
         <Zap />
         Upgrade Paln

@@ -65,7 +65,7 @@ export default function RecentTransactions() {
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
               <DropdownMenu.Item>
 Per Day</DropdownMenu.Item>
               <DropdownMenu.Item>
@@ -85,7 +85,7 @@ Last Year</DropdownMenu.Item>
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
               <DropdownMenu.Item>
 Incoming</DropdownMenu.Item>
               <DropdownMenu.Item>

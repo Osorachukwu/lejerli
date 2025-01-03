@@ -17,27 +17,27 @@ export default function CreateAccountComponent({ handleSwitch }) {
         <div className="mb-6">
           <label
             htmlFor="email"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Email Address
           </label>
           <input
             type="email"
             id="email"
-            className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         <div className="mb-6">
           <label
             htmlFor="password"
-            className="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            className="block mb-2 text-sm font-medium text-gray-900"
           >
             Create Password
           </label>
           <input
             type="password"
             id="password"
-            className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
           />
         </div>
         <div className="flex items-start mb-6">
@@ -46,13 +46,13 @@ export default function CreateAccountComponent({ handleSwitch }) {
               id="remember"
               type="checkbox"
               value=""
-              className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+              className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
               required
             />
           </div>
           <Link
             to="#"
-            className="ms-2 text-sm font-medium text-primaryColor  hover:underline dark:text-secondaryColor"
+            className="ms-2 text-sm font-medium text-primaryColor  hover:underline"
           >
             <label htmlFor="remember" className="">
               I agree with Lejerli's Terms of Service and Privacy Policy.
@@ -61,7 +61,7 @@ export default function CreateAccountComponent({ handleSwitch }) {
         </div>
         <button
           type="button"
-          className="w-full text-white bg-secondaryColor hover:bg-white hover:text-secondaryColor hover:border hover:border-secondaryColor focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800"
+          className="w-full text-white bg-secondaryColor font-medium rounded-lg text-sm px-5 py-2.5 me-2 "
           onClick={handleSwitch}
         >
           Continue
@@ -72,7 +72,7 @@ export default function CreateAccountComponent({ handleSwitch }) {
           <div className="border h-[1px] w-full"></div>
         </div>
         <a href="#" type="button">
-          <div className="flex justify-center items-center border border-secondaryColor text-secondaryColor rounded-lg font-medium text-sm dark:bg-blue-600 dark:hover:bg-blue-700 hover:text-white focus:outline-none dark:focus:ring-blue-800 hover:bg-secondaryColor focus:ring-4 focus:ring-blue-300">
+          <div className="flex justify-center items-center border border-secondaryColor text-secondaryColor rounded-lg font-medium text-sm">
             <img src={googleLogo} alt="" className="h-10 w-10" />
             Connect with Google
           </div>
@@ -82,7 +82,7 @@ export default function CreateAccountComponent({ handleSwitch }) {
         Already have an account?{" "}
         <a
           href=""
-          className="text-secondaryColor hover:underline dark:text-blue-500"
+          className="text-secondaryColor hover:underline"
         >
           Login
         </a>

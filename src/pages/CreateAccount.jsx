@@ -27,7 +27,7 @@ export default function CreateAccount() {
                 <img src={companyLogo} alt="Lejerli logo" />
               </Link>
             </div>
-            <div className="px-4 lg:px-8">
+            <div>
               <p className="text-2xl lg:text-3xl font-bold mb-6">
                 Get started quickly with our friendly user interface
               </p>
@@ -43,19 +43,19 @@ export default function CreateAccount() {
             <div className="flex gap-4 mb-4 justify-center lg:justify-start">
               {[
                 {
-                  socialMediaIcon: <Instagram className="text-purple-600" />,
+                  socialMediaIcon: <Instagram className="text-primaryColor" />,
                   socialMediaUrl: "",
                 },
                 {
-                  socialMediaIcon: <Facebook className="text-purple-600" />,
+                  socialMediaIcon: <Facebook className="text-primaryColor" />,
                   socialMediaUrl: "",
                 },
                 {
-                  socialMediaIcon: <Twitter className="text-purple-600" />,
+                  socialMediaIcon: <Twitter className="text-primaryColor" />,
                   socialMediaUrl: "",
                 },
                 {
-                  socialMediaIcon: <Youtube className="text-purple-600" />,
+                  socialMediaIcon: <Youtube className="text-primaryColor" />,
                   socialMediaUrl: "",
                 },
               ].map((socialMedia, i) => (
@@ -70,7 +70,7 @@ export default function CreateAccount() {
               <a href="#">Privacy Policy</a>
               <a href="#">Cookies</a>
             </div>
-            <span className="text-sm text-white text-center lg:text-left dark:text-gray-400">
+            <span className="text-sm text-white text-center lg:text-left">
               ©
               <a href="https://flowbite.com/" className="hover:underline">
                 Lejerli
@@ -92,19 +92,19 @@ export default function CreateAccount() {
           <div className="flex gap-4 mb-4 justify-center lg:justify-start">
             {[
               {
-                socialMediaIcon: <Instagram className="text-purple-600" />,
+                socialMediaIcon: <Instagram className="text-primaryColor" />,
                 socialMediaUrl: "",
               },
               {
-                socialMediaIcon: <Facebook className="text-purple-600" />,
+                socialMediaIcon: <Facebook className="text-primaryColor" />,
                 socialMediaUrl: "",
               },
               {
-                socialMediaIcon: <Twitter className="text-purple-600" />,
+                socialMediaIcon: <Twitter className="text-primaryColor" />,
                 socialMediaUrl: "",
               },
               {
-                socialMediaIcon: <Youtube className="text-purple-600" />,
+                socialMediaIcon: <Youtube className="text-primaryColor" />,
                 socialMediaUrl: "",
               },
             ].map((socialMedia, i) => (
@@ -119,7 +119,7 @@ export default function CreateAccount() {
             <a href="#">Privacy Policy</a>
             <a href="#">Cookies</a>
           </div>
-          <div className="text-sm text-white text-center dark:text-gray-400">
+          <div className="text-sm text-white text-center">
             ©
             <a href="https://flowbite.com/" className="hover:underline">
               Lejerli

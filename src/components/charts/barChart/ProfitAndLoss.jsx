@@ -6,12 +6,12 @@ export default function ProfitAndLoss() {
   return (
     <div className="m-2">
       <div className="flex justify-between items-center">
-        <p>Profit & Loss</p>
+        <p className="font-bold">Profit & Loss</p>
         <div className="space-x-3">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
               <div className="flex items-center gap-8 px-1 py-2 font-medium rounded-lg border">
-                All Assets
+                Wallets
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
@@ -28,7 +28,7 @@ export default function ProfitAndLoss() {
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
               <div className="flex items-center gap-8 px-1 py-2 font-medium rounded-lg border">
-                All Assets
+                Past Year
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>

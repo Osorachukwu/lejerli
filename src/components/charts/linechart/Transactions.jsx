@@ -6,7 +6,7 @@ export default function Transactions() {
   return (
     <div className="m-2">
       <div className="flex items-center justify-between">
-        <p>Transactions</p>
+        <p className="font-bold">Transactions</p>
         <div className="space-x-3">
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
@@ -15,7 +15,7 @@ export default function Transactions() {
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
               <DropdownMenu.Item>Profile</DropdownMenu.Item>
               <DropdownMenu.Item>Billing</DropdownMenu.Item>
               <DropdownMenu.Item>Team</DropdownMenu.Item>
@@ -25,11 +25,11 @@ export default function Transactions() {
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
               <div className="flex items-center gap-8 px-1 py-2 font-medium rounded-lg border">
-                All Assets
+                All Wallets
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
               <DropdownMenu.Item>Profile</DropdownMenu.Item>
 
               <DropdownMenu.Item>Billing</DropdownMenu.Item>
@@ -42,11 +42,11 @@ export default function Transactions() {
           <DropdownMenu.Root>
             <DropdownMenu.Trigger>
               <div className="flex items-center gap-8 px-1 py-2 font-medium rounded-lg border">
-                All Assets
+                Past Year
                 <ChevronDown size={16} />
               </div>
             </DropdownMenu.Trigger>
-            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+            <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
               <DropdownMenu.Item>Profile</DropdownMenu.Item>
 
               <DropdownMenu.Item>Billing</DropdownMenu.Item>

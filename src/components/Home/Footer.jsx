@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
-    <footer className="bg-primaryColor dark:bg-gray-900">
+    <footer className="bg-primaryColor">
       <div className="mx-auto w-full max-w-screen-xl">
         <div className="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-5">
           <div>
@@ -76,10 +76,10 @@ export default function Footer() {
             </div>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+            <h2 className="mb-6 text-sm font-semibold text-white uppercase">
               Product
             </h2>
-            <ul className="text-white dark:text-gray-400">
+            <ul className="text-white">
               <li className="mb-4">
                 <Link to="#" className=" hover:underline">
                   How it works 
@@ -103,10 +103,10 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+            <h2 className="mb-6 text-sm font-semibold text-white uppercase">
               Tools
             </h2>
-            <ul className="text-white dark:text-gray-400">
+            <ul className="text-white">
               <li className="mb-4">
                 <Link to="#" className="hover:underline">
                  Crypto Profit & Loss Calculator
@@ -130,10 +130,10 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+            <h2 className="mb-6 text-sm font-semibold text-white uppercase">
               Company
             </h2>
-            <ul className="text-white dark:text-gray-400">
+            <ul className="text-white">
               <li className="mb-4">
                 <Link to="#" className="hover:underline">
                   About Us
@@ -162,10 +162,10 @@ export default function Footer() {
             </ul>
           </div>
           <div>
-            <h2 className="mb-6 text-sm font-semibold text-white uppercase dark:text-white">
+            <h2 className="mb-6 text-sm font-semibold text-white uppercase">
               Support
             </h2>
-            <ul className="text-white dark:text-gray-400">
+            <ul className="text-white ">
               <li className="mb-4">
                 <Link to="#" className="hover:underline">
                   FAQs
@@ -185,9 +185,9 @@ export default function Footer() {
           </div>
         </div>
         {/*  */}
-        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 sm:mx-auto lg:my-8" />
         <div className="sm:flex sm:items-center sm:justify-between text-white pl-2">
-          <span className="text-sm text-white sm:text-center dark:text-gray-400">
+          <span className="text-sm text-white sm:text-center">
             ©
             <a href="https://flowbite.com/" className="hover:underline">
               Lejerli
@@ -203,28 +203,28 @@ export default function Footer() {
             
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white bg-white rounded-full p-1"
+              className="text-gray-500 hover:text-gray-900 bg-white rounded-full p-1"
             >
               <Facebook />
               <span className="sr-only">Facebook page page</span>
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 bg-white rounded-full p-1"
+              className="text-gray-500 hover:text-gray-900 ms-5 bg-white rounded-full p-1"
             >
               <Twitter />
               <span className="sr-only">Twitter page</span>
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 bg-white rounded-full p-1"
+              className="text-gray-500 hover:text-gray-900 ms-5 bg-white rounded-full p-1"
             >
               <Youtube />
               <span className="sr-only">Youtube page</span>
             </a>
             <a
               href="#"
-              className="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5 bg-white rounded-full p-1"
+              className="text-gray-500 hover:text-gray-900 ms-5 bg-white rounded-full p-1"
             >
               <Instagram />
               <span className="sr-only">Instagram page</span>

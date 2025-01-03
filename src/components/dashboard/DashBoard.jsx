@@ -14,6 +14,7 @@ import iconn from "../../assets/Icons.png";
 import Reports from "./dashboardSideBar/Reports";
 import Settings from "./dashboardSideBar/Settings";
 import HelpAndSupport from "./dashboardSideBar/HelpAndSupport";
+import Analytics from "./dashboardSideBar/Analytics";
 
 export default function DashBoard() {
   // State to track the active view
@@ -25,7 +26,7 @@ export default function DashBoard() {
   };
   return (
     <section className="border rounded-lg shadow-xl hidden md:block">
-      <div className="h-screen flex">
+      <div className="flex">
         {/* First col💥 */}
         <div className="w-1/5 border-r flex flex-col">
           <div className="flex justify-between items-center gap-5 px-8 h-16">
@@ -35,8 +36,8 @@ export default function DashBoard() {
             <img src={iconn} alt=""/>
           </div>
           {/* Dashbord main Buttons */}
-          <div className="h-full px-5 py-2 border-t flex flex-col justify-between">
-            <div className="space-y-2 mb-4">
+          <div className="h-full px-5 py-2 border-t ">
+            <div className="space-y-2 mb-32">
               {[
                 { id: 1, btnIcon: trustWallet, btnTitle: "DashBoard" },
                 { id: 2, btnIcon: trustWallet, btnTitle: "Accounts" },
@@ -67,7 +68,7 @@ export default function DashBoard() {
           </div>
         </div>
         {/* Second col 💥 */}
-        <div className="w-4/5">
+        <div className="w-4/5 pb-10">
           {/* Conditional rendering of active view */}
           {activeView === "DashBoard" && (
             <>

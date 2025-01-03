@@ -101,7 +101,7 @@ export default function SelectWalletComponent({ handleSwitchTwo }) {
         <div>
           <button
             type="button"
-            className="px-5 py-2.5 inline-flex items-center text-black  hover:bg-gray-100 hover:text-secondaryColor border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center dark:focus:ring-gray-600 dark:bg-gray-800 dark:border-gray-700 dark:text-white dark:hover:bg-gray-700 me-2"
+            className="px-5 py-2.5 inline-flex items-center text-black  hover:bg-gray-100 hover:text-secondaryColor border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center me-2"
           >
             <ArrowDownToLine />
             Import CSV File
@@ -113,14 +113,14 @@ export default function SelectWalletComponent({ handleSwitchTwo }) {
         <form className="me-2 max-w-sm md:w-1/4 ">
           <label
             htmlFor="default-search"
-            className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
+            className="mb-2 text-sm font-medium text-gray-900 sr-only "
           >
             Search
           </label>
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
               <svg
-                className="w-4 h-4 text-gray-500 dark:text-gray-400"
+                className="w-4 h-4 text-gray-500"
                 aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -138,7 +138,7 @@ export default function SelectWalletComponent({ handleSwitchTwo }) {
             <input
               type="search"
               id="default-search"
-              className="block w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 outline-none"
+              className="block w-full p-2.5 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 outline-none"
               placeholder="Search for your exchange wallet or blockchain"
               required
             />
@@ -147,25 +147,25 @@ export default function SelectWalletComponent({ handleSwitchTwo }) {
         <div className="space-y-2 md:space-y-0">
           <button
             type="button"
-            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 "
+            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10  "
           >
             All
           </button>
           <button
             type="button"
-            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10"
           >
             Exchange
           </button>
           <button
             type="button"
-            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10"
           >
             Bitchain
           </button>
           <button
             type="button"
-            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700"
+            className="py-2.5 px-5 me-2 text-sm font-medium text-gray-900 focus:border-blue-500 focus:text-blue-500 bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10"
           >
             Wallet
           </button>

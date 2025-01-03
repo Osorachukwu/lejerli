@@ -13,7 +13,7 @@ export default function NavList({ styleProp }) {
             <ChevronDown size={16} />
           </div>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+        <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
           <DropdownMenu.Item className="focus:outline-none">Profile</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Billing</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Team</DropdownMenu.Item>
@@ -31,7 +31,7 @@ export default function NavList({ styleProp }) {
             <ChevronDown size={16} />
           </div>
         </DropdownMenu.Trigger>
-        <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2">
+        <DropdownMenu.Content className="bg-white shadow-customBoxShadow px-3 py-2 rounded-lg space-y-2 z-50">
           <DropdownMenu.Item className="focus:outline-none">Profile</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Billing</DropdownMenu.Item>
           <DropdownMenu.Item className="focus:outline-none">Team</DropdownMenu.Item>
