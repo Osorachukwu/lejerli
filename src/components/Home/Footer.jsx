@@ -205,28 +205,28 @@ export default function Footer() {
               href="#"
               className="text-gray-500 hover:text-gray-900 bg-white rounded-full p-1"
             >
-              <Facebook />
+              <Facebook className="text-primaryColor"/>
               <span className="sr-only">Facebook page page</span>
             </a>
             <a
               href="#"
               className="text-gray-500 hover:text-gray-900 ms-5 bg-white rounded-full p-1"
             >
-              <Twitter />
+              <Twitter className="text-primaryColor"/>
               <span className="sr-only">Twitter page</span>
             </a>
             <a
               href="#"
               className="text-gray-500 hover:text-gray-900 ms-5 bg-white rounded-full p-1"
             >
-              <Youtube />
+              <Youtube className="text-primaryColor"/>
               <span className="sr-only">Youtube page</span>
             </a>
             <a
               href="#"
               className="text-gray-500 hover:text-gray-900 ms-5 bg-white rounded-full p-1"
             >
-              <Instagram />
+              <Instagram className="text-primaryColor"/>
               <span className="sr-only">Instagram page</span>
             </a>
           </div>

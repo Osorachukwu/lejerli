@@ -5,7 +5,6 @@ import dataEncryptImage from "../assets/data-encrypt.svg";
 import Hero from "../components/Home/Hero";
 import NavBar from "../components/navBar/NavBar";
 import Footer from "../components/Home/Footer";
-// import DashBoard from "../components/dashboard/DashBoard";
 import dashBoardPhoto from '../assets/dashboard_photo.png'
 
 export default function Home() {

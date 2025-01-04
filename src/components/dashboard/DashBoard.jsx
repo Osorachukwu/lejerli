@@ -15,36 +15,40 @@ import Reports from "./dashboardSideBar/Reports";
 import Settings from "./dashboardSideBar/Settings";
 import HelpAndSupport from "./dashboardSideBar/HelpAndSupport";
 import Analytics from "./dashboardSideBar/Analytics";
+import sideBarIconOne from '../../assets/sidebar-icons-1.svg'
+import sideBarIconTwo from '../../assets/sidebar-icons-2.svg'
+import sideBarIconThree from '../../assets/sidebar-icons-3.svg'
+import sideBarIconFour from '../../assets/sidebar-icons-4.svg'
+import sideBarIconFive from '../../assets/sidebar-icons-5.svg'
 
 export default function DashBoard() {
-  // State to track the active view
   const [activeView, setActiveView] = useState("DashBoard");
 
-  // Function to handle button clicks
   const handleButtonClick = (btnItem) => {
-    setActiveView(btnItem.btnTitle); // Set active view based on button title
+    setActiveView(btnItem.btnTitle);
   };
+
   return (
-    <section className="border rounded-lg shadow-xl hidden md:block">
-      <div className="flex">
+    <section className="shadow-xl h-screen overflow-hidden">
+      <div className="flex h-full">
         {/* First col💥 */}
-        <div className="w-1/5 border-r flex flex-col">
-          <div className="flex justify-between items-center gap-5 px-8 h-16">
+        <div className="w-1/5 h-full border-r flex flex-col fixed top-0 left-0 bg-white overflow-y-auto">
+          <div className="flex justify-between items-center gap-5 px-8 h-16 border-b">
             <Link to="/">
               <img src={lejerliLogo} alt="Legeril Logo" />
             </Link>
-            <img src={iconn} alt=""/>
+            <img src={iconn} alt="" />
           </div>
-          {/* Dashbord main Buttons */}
-          <div className="h-full px-5 py-2 border-t ">
+          {/* Dashboard main Buttons */}
+          <div className="h-full px-5 py-2">
             <div className="space-y-2 mb-32">
               {[
-                { id: 1, btnIcon: trustWallet, btnTitle: "DashBoard" },
+                { id: 1, btnIcon: sideBarIconOne, btnTitle: "DashBoard" },
                 { id: 2, btnIcon: trustWallet, btnTitle: "Accounts" },
-                { id: 3, btnIcon: trustWallet, btnTitle: "Analytics" },
-                { id: 4, btnIcon: trustWallet, btnTitle: "Reports" },
-                { id: 5, btnIcon: trustWallet, btnTitle: "Settings" },
-                { id: 6, btnIcon: trustWallet, btnTitle: "Help & Support" },
+                { id: 3, btnIcon: sideBarIconTwo, btnTitle: "Analytics" },
+                { id: 4, btnIcon: sideBarIconThree, btnTitle: "Reports" },
+                { id: 5, btnIcon: sideBarIconFour, btnTitle: "Settings" },
+                { id: 6, btnIcon: sideBarIconFive, btnTitle: "Help & Support" },
               ].map((btnItem, i) => (
                 <button
                   key={i}
@@ -68,7 +72,7 @@ export default function DashBoard() {
           </div>
         </div>
         {/* Second col 💥 */}
-        <div className="w-4/5 pb-10">
+        <div className="w-4/5 ml-auto h-full overflow-y-auto pb-10">
           {/* Conditional rendering of active view */}
           {activeView === "DashBoard" && (
             <>

@@ -10,7 +10,7 @@ export default function Hero() {
         Growing Your Portfolio Is Hard
       </h1>
       <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl ">
-        Accounting For It Shouldn't Be
+        <span className='text-secondaryColor'>Accounting</span> For It Shouldn't Be
       </h1>
       <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 ">
         Lejerli consolidates your crypto data across exchanges, tracks

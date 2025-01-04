@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import earthIcon from "../../assets/icons/earth-icon.svg";
 import CountryDropdown from "../dashboard/initialDashboard/CountryDropdown";
 import CurrencyDropdown from "../dashboard/initialDashboard/CurrencyDropdown";
+import PurposeDropdown from "../dashboard/initialDashboard/PurposeDropdown";
 
 export default function Onboarding() {
   return (
@@ -26,6 +27,8 @@ export default function Onboarding() {
       <div className="space-y-5 my-5">
         <CountryDropdown />
         <CurrencyDropdown />
+        {/* Purpose Dropdown */}
+        <PurposeDropdown />
       </div>
       {/* Buttons */}
       <div className="flex">
