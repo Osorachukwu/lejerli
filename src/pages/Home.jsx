@@ -6,12 +6,14 @@ import Hero from "../components/Home/Hero";
 import NavBar from "../components/navBar/NavBar";
 import Footer from "../components/Home/Footer";
 import dashBoardPhoto from '../assets/dashboard_photo.png'
+import EnterOTP from "../components/onboarding/EnterOTP";
 
 export default function Home() {
   return (
     <div>
       <NavBar />
       <Hero />
+      <EnterOTP />
 
       {/* <div className="px-44 my-28 ">
         <DashBoard />
