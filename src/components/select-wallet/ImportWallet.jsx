@@ -15,78 +15,50 @@ export default function ImportWallet({ selectedExchange }) {
   const [loading, setLoading] = useState(false);
   
 
-  const handleConnectWallet = () => {
-    $.ajax({
-      type: "POST",
-      url: "https://api.lejerli.online/api/v1/exchange",
-      dataType: "json",
-      crossDo
-    });
-  }
+  const handleConnectWallet = async () => {
+    if (!secret || !key || !passphrase || !secret) {
+      setMessage("Please fill in all fields.");
+      return;
+    }
 
-  // const handleConnectWallet = () => {
-  //   if (!exchange || !secret || !key || !passphrase) {
-  //     setMessage("Please fill in all fields.");
-  //     return;
-  //   }
-  //   console.log(exchange)
-  //   console.log(secret)
-  //   console.log(key)
-  //   console.log(passphrase)
+    setLoading(true);
+    setMessage(null);
 
-  //   setLoading(true);
-  //   setMessage(null);
+    try {
+      const { status, data } = await axios.post(
+        "https://api.lejerli.online/api/v1/exchange",
+        {
+          exchange,
+          secret,
+          key,
+          passphrase
+        }
+      );
 
-  //   axios({
-  //     method: "POST",
-  //     url: "https://api.lejerli.online/api/v1/exchange",
-  //     data: {
-  //       exchange: exchange,
-  //       secret: secret,
-  //       key: key,
-  //       passphrase: passphrase
-  //     }
-  //   }).then((res) => {
-  //     console.log(res)
-  //   })
-  //   // try {
-  //   //   const { status, data } = await axios.post(
-  //   //     "https://api.lejerli.online/api/v1/exchange",
-  //   //     {
-  //   //       exchange,
-  //   //       secret,
-  //   //       key,
-  //   //       passphrase,
-  //   //     }
-  //   //   );
-
-  //   //   if (status === 200) {
-  //   //     setMessage(data.message);
-
-  //   //     console.log(data.error)
-  //   //     setSecret("");
-  //   //     setKey("");
-  //   //     setPassphrase("");
-  //   //   } else {
-  //   //     setMessage(data.message || "Signup failed. Please try again.");
-  //   //   }
-  //   // } catch (error) {
-  //   //   console.log(error)
-  //   //   if (error.response) {
-  //   //     if (error.response.status === 401) {
-  //   //       setMessage(
-  //   //         "Password is not complex enough. Please use a mix of uppercase and lowercase letters, numbers, and special characters."
-  //   //       );
-  //   //     } else {
-  //   //       setMessage(error.response.data.message || "An error occurred. Please try again later.");
-  //   //     }
-  //   //   } else {
-  //   //     setMessage("An error occurred. Please check your internet connection.");
-  //   //   }
-  //   // } finally {
-  //   //   setLoading(false);
-  //   // }
-  // };
+      if (status === 201) {
+        setMessage(data.message);
+        setSecret("");
+        setKeyAddress("");
+        setPassphrase("");
+      } else {
+        setMessage(data.message || "Signup failed. Please try again.");
+      }
+    } catch (error) {
+      if (error.response) {
+        if (error.response.status === 422) {
+          setMessage(
+            "Password is not complex enough. Please use a mix of uppercase and lowercase letters, numbers, and special characters."
+          );
+        } else {
+          setMessage(error.response.data.message || "An error occurred. Please try again later.");
+        }
+      } else {
+        setMessage("An error occurred. Please check your internet connection.");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div>

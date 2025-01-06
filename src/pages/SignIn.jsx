@@ -6,7 +6,7 @@ import { Instagram, Facebook, Twitter, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import googleLogo from "@/assets/Google_Icons.webp";
 import axios from "axios";
-import $ from 'jquery';
+import $ from "jquery";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -14,12 +14,14 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
-  const [loginStatus, setLoginStatus] = useState(window.localStorage.getItem("loginStatus"));
+  const [loginStatus, setLoginStatus] = useState(
+    window.localStorage.getItem("loginStatus")
+  );
 
   useEffect(() => {
     if (loginStatus === "true") {
       navigate("/");
-;    }
+    }
   }, []);
 
   // const handleSignin = async () => {
@@ -76,7 +78,7 @@ export default function SignIn() {
   //     setLoading(false);
   //   }
   // };
-  
+
   const handleSignin = () => {
     window.localStorage.setItem("loginStatus", "false");
 
@@ -90,39 +92,33 @@ export default function SignIn() {
       cache: false,
       data: {
         email: email,
-        password: password
+        password: password,
       },
-      success: ((res) => {
+      success: (res) => {
         let stored_email = window.localStorage.getItem("email");
-        window.localStorage.setItem("user", res.data.email);//this will set a localstorage variable for current user
-        
+        window.localStorage.setItem("user", res.data.email); //this will set a localstorage variable for current user
+
         if (!stored_email.includes(",")) {
           //only one user yet for the system
           if (stored_email !== res.data.email) {
             //drop a message, invalid email or password
+          } else if (stored_email === res.data.email) {
+            window.localStorage.setItem("loginStatus", "true");
+            navigate("/onboarding");
+          } else {
           }
-          else if (stored_email === res.data.email) {
-
-            window.localStorage.setItem("loginStatus", "true");            navigate("/onboarding");
-          }
-          else {
-
-          }
-        }
-        else {
+        } else {
           //for multiple users
           let split_stored_email = stored_email.split(",");
 
           if (split_stored_email.includes(res.data.email)) {
-
-            window.localStorage.setItem("loginStatus", "true");            navigate("/onboarding");
+            window.localStorage.setItem("loginStatus", "true");
+            navigate("/onboarding");
           }
         }
-      })
-    })
-  }
-
-
+      },
+    });
+  };
 
   return (
     <section className="bg-primaryColor text-white lg:h-screen p-4 lg:p-16 relative overflow-y-hidden">
@@ -215,7 +211,7 @@ export default function SignIn() {
                   type="email"
                   id="email"
                   value={email}
-                  onChange={(e)=> setEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                   className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
@@ -230,7 +226,7 @@ export default function SignIn() {
                   type="password"
                   id="password"
                   value={password}
-                  onChange={(e)=> setPassword(e.target.value)}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
                 />
               </div>
