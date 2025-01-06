@@ -23,18 +23,6 @@ export default function CreateAccount() {
   // console.log(otpVerified);
   const [storeEmail, setStoreEmail] = useState("");
   const navigate = useNavigate();
-  const [loginStatus, setLoginStatus] = useState(
-    window.localStorage.getItem("loginStatus")
-  );
-
-  useEffect(() => {
-    if (loginStatus === "false") {
-      navigate("/create-account");
-    }
-    else if (loginStatus === "true") {
-      navigate("/onboarding");
-    }
-  }, []);
 
   const handleSignup = () => {
     $.ajax({
@@ -310,127 +298,120 @@ export default function CreateAccount() {
         {/* col 2 */}
         {/* Moving from the create account component to the onbordeing 1 based on the state above💥 */}
         <div className="w-full lg:w-2/3 bg-white text-black rounded-lg p-8 lg:p- z- relative ">
-          {
-            otpVerified ? (
-              <Onboarding />
-            ) : (
-              // 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-              // 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-              <div className="flex flex-col w-full h-full">
-                <div className="space-y-2 mb-8">
-                  <p className="text-3xl font-semibold">
-                    Let's create your account
-                  </p>
-                  <p className="text-xl">
-                    Signup for Lejerli and manage your portfolio easily
-                  </p>
-                </div>
-                <form
-                  onSubmit={(e) => e.preventDefault()}
-                  className="flex flex-col w-full h-full"
+          {/* 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 */}
+          {/* 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 */}
+          <div className="flex flex-col w-full h-full">
+            <div className="space-y-2 mb-8">
+              <p className="text-3xl font-semibold">
+                Let's create your account
+              </p>
+              <p className="text-xl">
+                Signup for Lejerli and manage your portfolio easily
+              </p>
+            </div>
+            <form
+              onSubmit={(e) => e.preventDefault()}
+              className="flex flex-col w-full h-full"
+            >
+              <div className="mb-6 w-full">
+                <label
+                  htmlFor="email"
+                  className="block mb-2 text-sm font-medium text-gray-900"
                 >
-                  <div className="mb-6 w-full">
-                    <label
-                      htmlFor="email"
-                      className="block mb-2 text-sm font-medium text-gray-900"
-                    >
-                      Email Address
-                    </label>
-                    <input
-                      type="email"
-                      id="email"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                      className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div className="mb-6 w-full">
-                    <label
-                      htmlFor="password"
-                      className="block mb-2 text-sm font-medium text-gray-900"
-                    >
-                      Create Password
-                    </label>
-                    <input
-                      type="password"
-                      id="password"
-                      value={password}
-                      onChange={(e) => setPassword(e.target.value)}
-                      className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
-                    />
-                  </div>
-                  <div className="flex items-center mb-6 ">
-                    <input
-                      id="remember"
-                      type="checkbox"
-                      className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
-                      required
-                    />
-                    <label
-                      htmlFor="remember"
-                      className="ms-2 text-sm font-medium text-gray-900"
-                    >
-                      I agree with Lejerli's Terms of Service and Privacy
-                      Policy.
-                    </label>
-                  </div>
-                  <button
-                    type="button"
-                    className="w-full text-white bg-secondaryColor font-medium rounded-lg text-sm px-5 py-2.5 mb-4"
-                    onClick={handleSignup}
-                    disabled={loading}
-                  >
-                    {loading ? "Creating Account..." : "Continue"}
-                  </button>
-                  {message && (
-                    // <p className="text-center text-red-500 absolute right-0">{message}</p>
-
-                    <div
-                      className="absolute top-0 right-0 flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
-                      role="alert"
-                    >
-                      <svg
-                        className="flex-shrink-0 inline w-4 h-4 me-3"
-                        aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
-                      </svg>
-                      <span className="sr-only">Info</span>
-                      <div className="font-medium">{message}</div>
-                    </div>
-                  )}
-                  <div className="flex gap-3 justify-between items-center my-4">
-                    <div className="border h-[1px] w-full"></div>
-                    Or
-                    <div className="border h-[1px] w-full"></div>
-                  </div>
-                  <a
-                    href="#"
-                    type="button"
-                    className="flex justify-center items-center border border-secondaryColor text-secondaryColor rounded-lg font-medium text-sm py-2"
-                  >
-                    <img src={googleLogo} alt="" className="h-10 w-10" />
-                    Connect with Google
-                  </a>
-                </form>
-                <p className="text-center mt-4">
-                  Already have an account?{" "}
-                  <Link
-                    to="/signin"
-                    className="text-secondaryColor hover:underline"
-                  >
-                    Login
-                  </Link>
-                </p>
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+                />
               </div>
-            )
+              <div className="mb-6 w-full">
+                <label
+                  htmlFor="password"
+                  className="block mb-2 text-sm font-medium text-gray-900"
+                >
+                  Create Password
+                </label>
+                <input
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500"
+                />
+              </div>
+              <div className="flex items-center mb-6 ">
+                <input
+                  id="remember"
+                  type="checkbox"
+                  className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
+                  required
+                />
+                <label
+                  htmlFor="remember"
+                  className="ms-2 text-sm font-medium text-gray-900"
+                >
+                  I agree with Lejerli's Terms of Service and Privacy Policy.
+                </label>
+              </div>
+              <button
+                type="button"
+                className="w-full text-white bg-secondaryColor font-medium rounded-lg text-sm px-5 py-2.5 mb-4"
+                onClick={handleSignup}
+                disabled={loading}
+              >
+                {loading ? "Creating Account..." : "Continue"}
+              </button>
+              {message && (
+                // <p className="text-center text-red-500 absolute right-0">{message}</p>
 
-            // 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-            // 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥
-          }
+                <div
+                  className="absolute top-0 right-0 flex items-center p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+                  role="alert"
+                >
+                  <svg
+                    className="flex-shrink-0 inline w-4 h-4 me-3"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                  </svg>
+                  <span className="sr-only">Info</span>
+                  <div className="font-medium">{message}</div>
+                </div>
+              )}
+              <div className="flex gap-3 justify-between items-center my-4">
+                <div className="border h-[1px] w-full"></div>
+                Or
+                <div className="border h-[1px] w-full"></div>
+              </div>
+              <a
+                href="#"
+                type="button"
+                className="flex justify-center items-center border border-secondaryColor text-secondaryColor rounded-lg font-medium text-sm py-2"
+              >
+                <img src={googleLogo} alt="" className="h-10 w-10" />
+                Connect with Google
+              </a>
+            </form>
+            <p className="text-center mt-4">
+              Already have an account?{" "}
+              <Link
+                to="/signin"
+                className="text-secondaryColor hover:underline"
+              >
+                Login
+              </Link>
+            </p>
+          </div>
+
+          {/* 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 */}
+          {/* 💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥💥 */}
         </div>
         <footer className="mt-8 lg:hidden">
           <div className="flex gap-4 mb-4 justify-center lg:justify-start">
