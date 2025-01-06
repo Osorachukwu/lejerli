@@ -28,7 +28,7 @@ export default function ConnectWallet() {
         <form className="max-w-sm mx-auto">
           <div className="mb-5">
             <label
-              for="waller"
+              htmlFor="waller"
               className="block mb-2 text-gray-900"
             >
               Your email

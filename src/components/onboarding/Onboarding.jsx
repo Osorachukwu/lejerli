@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ChevronDown, Info, ArrowLeft, Earth } from "lucide-react";
 import allAssets from "@/assets/icons/all-assets.svg";
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
@@ -7,8 +7,14 @@ import earthIcon from "../../assets/icons/earth-icon.svg";
 import CountryDropdown from "../dashboard/initialDashboard/CountryDropdown";
 import CurrencyDropdown from "../dashboard/initialDashboard/CurrencyDropdown";
 import PurposeDropdown from "../dashboard/initialDashboard/PurposeDropdown";
+import axios from "axios";
 
 export default function Onboarding() {
+  const [holdSession, setHoldSession] = useState("");
+  // useEffect(() => {
+  //   const
+  // }, []);
+
   return (
     <div>
       <div className="space-y-2 mb-8">

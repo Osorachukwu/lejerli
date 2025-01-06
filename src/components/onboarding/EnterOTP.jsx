@@ -25,16 +25,16 @@ export default function EnterOTP({}) {
             onChange={(e)=> setOtpValue(e.target.value)}
           />
         </div>
-        <div class="flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <button
-            class="bg-secondaryColor text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-secondaryColor text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
             onClick={handleConfirmOTP}
           >
             Verify
           </button>
           <a
-            class="inline-block align-baseline font-bold text-sm text-secondaryColor"
+            className="inline-block align-baseline font-bold text-sm text-secondaryColor"
             href="#"
           >
             Resend OTP

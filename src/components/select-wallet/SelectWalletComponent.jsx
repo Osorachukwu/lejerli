@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import bitcoinLogo from "@/assets/assets-logo/bitcoin-logo.svg";
 import ethLogo from "@/assets/assets-logo/eth-logo.svg";
 import metamaskLogo from "@/assets/assets-logo/metamask-logo.svg";
@@ -89,6 +89,7 @@ export default function SelectWalletComponent({ handleSwitchTwo }) {
       walletOrExchangecategory: "",
     },
   ];
+ 
   return (
     <div>
       <div className="mb-10 space-y-4 md:flex justify-between">
