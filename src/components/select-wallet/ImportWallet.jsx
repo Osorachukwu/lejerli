@@ -2,61 +2,91 @@ import React, { useState } from "react";
 import { ArrowDownToLine, ChevronDown, Info, X } from "lucide-react";
 import bitcoinLogo from "@/assets/assets-logo/bitcoin-logo.svg";
 import axios from "axios";
+import $ from 'jquery';
 // import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
 import { Link } from "react-router-dom";
 
 export default function ImportWallet({ selectedExchange }) {
-  let exchange = selectedExchange;
+  let exchange = "Kucoin2";
   const [secret, setSecret] = useState("");
-  const [keyAddress, setKeyAddress] = useState("");
+  const [key, setKey] = useState("");
   const [passphrase, setPassphrase] = useState("");
   const [message, setMessage] = useState(null);
   const [loading, setLoading] = useState(false);
+  
 
-  const handleSignup = async () => {
-    if (!secret || !keyAddress || !passphrase || !secret) {
-      setMessage("Please fill in all fields.");
-      return;
-    }
+  const handleConnectWallet = () => {
+    $.ajax({
+      type: "POST",
+      url: "https://api.lejerli.online/api/v1/exchange",
+      dataType: "json",
+      crossDo
+    });
+  }
 
-    setLoading(true);
-    setMessage(null);
+  // const handleConnectWallet = () => {
+  //   if (!exchange || !secret || !key || !passphrase) {
+  //     setMessage("Please fill in all fields.");
+  //     return;
+  //   }
+  //   console.log(exchange)
+  //   console.log(secret)
+  //   console.log(key)
+  //   console.log(passphrase)
 
-    try {
-      const { status, data } = await axios.post(
-        "https://api.lejerli.online/api/v1/exchange",
-        {
-          exchange,
-          secret,
-          key,
-          passphrase
-        }
-      );
+  //   setLoading(true);
+  //   setMessage(null);
 
-      if (status === 201) {
-        setMessage(data.message);
-        setSecret("");
-        setKeyAddress("");
-        setPassphrase("");
-      } else {
-        setMessage(data.message || "Signup failed. Please try again.");
-      }
-    } catch (error) {
-      if (error.response) {
-        if (error.response.status === 422) {
-          setMessage(
-            "Password is not complex enough. Please use a mix of uppercase and lowercase letters, numbers, and special characters."
-          );
-        } else {
-          setMessage(error.response.data.message || "An error occurred. Please try again later.");
-        }
-      } else {
-        setMessage("An error occurred. Please check your internet connection.");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
+  //   axios({
+  //     method: "POST",
+  //     url: "https://api.lejerli.online/api/v1/exchange",
+  //     data: {
+  //       exchange: exchange,
+  //       secret: secret,
+  //       key: key,
+  //       passphrase: passphrase
+  //     }
+  //   }).then((res) => {
+  //     console.log(res)
+  //   })
+  //   // try {
+  //   //   const { status, data } = await axios.post(
+  //   //     "https://api.lejerli.online/api/v1/exchange",
+  //   //     {
+  //   //       exchange,
+  //   //       secret,
+  //   //       key,
+  //   //       passphrase,
+  //   //     }
+  //   //   );
+
+  //   //   if (status === 200) {
+  //   //     setMessage(data.message);
+
+  //   //     console.log(data.error)
+  //   //     setSecret("");
+  //   //     setKey("");
+  //   //     setPassphrase("");
+  //   //   } else {
+  //   //     setMessage(data.message || "Signup failed. Please try again.");
+  //   //   }
+  //   // } catch (error) {
+  //   //   console.log(error)
+  //   //   if (error.response) {
+  //   //     if (error.response.status === 401) {
+  //   //       setMessage(
+  //   //         "Password is not complex enough. Please use a mix of uppercase and lowercase letters, numbers, and special characters."
+  //   //       );
+  //   //     } else {
+  //   //       setMessage(error.response.data.message || "An error occurred. Please try again later.");
+  //   //     }
+  //   //   } else {
+  //   //     setMessage("An error occurred. Please check your internet connection.");
+  //   //   }
+  //   // } finally {
+  //   //   setLoading(false);
+  //   // }
+  // };
 
   return (
     <div>
@@ -123,8 +153,8 @@ export default function ImportWallet({ selectedExchange }) {
                 type="text"
                 id="wallet-key"
                 placeholder="Enter Key"
-                value={keyAddress}
-                onChange={(e) => setKeyAddress(e.target.value)}
+                value={key}
+                onChange={(e) => setKey(e.target.value)}
                 className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-3"
               />
             </div>
@@ -146,7 +176,7 @@ export default function ImportWallet({ selectedExchange }) {
             <button
               type="button"
               className="px-5 py-2.5 inline-flex items-center text-white bg-[#8041FF] hover:bg-gray-100 hover:text-[#8041FF] border border-gray-200 focus:ring-4 focus:outline-none focus:ring-gray-100 font-medium rounded-lg text-sm text-center me-2"
-              onClick={handleSignup}
+              onClick={handleConnectWallet}
               disabled={loading}
             >
               <ArrowDownToLine />

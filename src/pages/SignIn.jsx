@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import companyLogo from "@/assets/company-logo-white.svg";
 import btcBg from "../assets/btc-bg.svg";
@@ -14,6 +14,13 @@ export default function SignIn() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState(null);
   const navigate = useNavigate();
+  const [loginStatus, setLoginStatus] = useState(window.localStorage.getItem("loginStatus"));
+
+  useEffect(() => {
+    if (loginStatus === "true") {
+      navigate("/");
+;    }
+  }, []);
 
   // const handleSignin = async () => {
   //   // alert(email)
@@ -70,7 +77,9 @@ export default function SignIn() {
   //   }
   // };
   
-  const handleSignin = () => [
+  const handleSignin = () => {
+    window.localStorage.setItem("loginStatus", "false");
+
     $.ajax({
       type: "POST",
       url: "https://api.lejerli.online/api/v1/auth/login",
@@ -85,7 +94,6 @@ export default function SignIn() {
       },
       success: ((res) => {
         let stored_email = window.localStorage.getItem("email");
-
         window.localStorage.setItem("user", res.data.email);//this will set a localstorage variable for current user
         
         if (!stored_email.includes(",")) {
@@ -94,7 +102,8 @@ export default function SignIn() {
             //drop a message, invalid email or password
           }
           else if (stored_email === res.data.email) {
-            navigate("/create-account");
+
+            window.localStorage.setItem("loginStatus", "true");            navigate("/onboarding");
           }
           else {
 
@@ -102,10 +111,16 @@ export default function SignIn() {
         }
         else {
           //for multiple users
+          let split_stored_email = stored_email.split(",");
+
+          if (split_stored_email.includes(res.data.email)) {
+
+            window.localStorage.setItem("loginStatus", "true");            navigate("/onboarding");
+          }
         }
       })
     })
-  ]
+  }
 
 
 

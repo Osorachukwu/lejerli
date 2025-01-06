@@ -6,6 +6,7 @@ import ImportWallet from "./components/select-wallet/ImportWallet";
 import SelectWallet from "./pages/SelectWallet";
 import DashboardPage from "./pages/DashboardPage";
 import SignIn from "./pages/SignIn";
+import OnboardingPage from "./pages/OnboardingPage";
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
         <Route path="/import-wallet" element={<ImportWallet /> } />
         <Route path="/dashboard" element={<DashboardPage /> } />
         <Route path="/signin" element={<SignIn /> } />
+        <Route path="/onboarding" element={<OnboardingPage /> } />
       </Routes>
     </BrowserRouter>
   );

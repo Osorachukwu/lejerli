@@ -23,6 +23,18 @@ export default function CreateAccount() {
   // console.log(otpVerified);
   const [storeEmail, setStoreEmail] = useState("");
   const navigate = useNavigate();
+  const [loginStatus, setLoginStatus] = useState(
+    window.localStorage.getItem("loginStatus")
+  );
+
+  useEffect(() => {
+    if (loginStatus === "false") {
+      navigate("/create-account");
+    }
+    else if (loginStatus === "true") {
+      navigate("/onboarding");
+    }
+  }, []);
 
   const handleSignup = () => {
     $.ajax({
@@ -48,7 +60,6 @@ export default function CreateAccount() {
           setOpenOTPModal(true);
         } else {
           //handle error here
-          
         }
       },
       error: (response) => {
@@ -121,16 +132,16 @@ export default function CreateAccount() {
       crossDomain: true,
       cache: false,
       xhrFields: {
-        withCredentials: true
+        withCredentials: true,
       },
       data: {
         email: storeEmail,
-        otp: otpValue
+        otp: otpValue,
       },
-      success: ((res) => {
+      success: (res) => {
         let Email = res.data.email;
         let token = res.data.access_token;
-          
+
         let data_email = Email;
         let data_token = token;
 
@@ -140,8 +151,7 @@ export default function CreateAccount() {
         if (stored_email == null || stored_email.length == 0) {
           window.localStorage.setItem("email", data_email);
           window.localStorage.setItem("token", data_token);
-        }
-        else {
+        } else {
           let new_email = stored_email + "," + data_email;
           let new_token = stored_token + "," + data_token;
           window.localStorage.setItem("email", new_email);
@@ -149,10 +159,9 @@ export default function CreateAccount() {
         }
 
         navigate("/signin");
-      })
-    })
-  }
-
+      },
+    });
+  };
 
   // const handleConfirmOTP = async () => {
   //   try {
