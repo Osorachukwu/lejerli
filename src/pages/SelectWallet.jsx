@@ -116,7 +116,7 @@ export default function SelectWallet() {
         }`}
       >
         <Link to="/">
-          <img src={companyLogo} alt="" className="mb-10" />
+          <img src={companyLogo} alt="" className="mb-5" />
         </Link>
         {/*💥 Most popular and All */}
         {switchComponentTwo ? (
@@ -128,10 +128,10 @@ export default function SelectWallet() {
             <div className="mb-10 space-y-4 md:flex justify-between">
               <div>
                 <p className="text-3xl font-semibold">
-                  Let's create your account {selectedExchange}
+                  Time for you first import {selectedExchange}
                 </p>
                 <p className="text-xl">
-                  Signup for Lejerli and manage your protfolio easily
+                  Start by selecting or searching for your exchange or wallet to import your transaction history
                 </p>
               </div>
               <div>

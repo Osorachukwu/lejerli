@@ -6,7 +6,6 @@ import Hero from "../components/Home/Hero";
 import NavBar from "../components/navBar/NavBar";
 import Footer from "../components/Home/Footer";
 import dashBoardPhoto from "../assets/dashboard_photo.png";
-import ImportWallet from "../components/select-wallet/ImportWallet";
 
 export default function Home() {
   return (
